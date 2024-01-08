@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+body {
+    width: 100vw !important;
+    height: 100vh !important;
+    font-family: 'Poppins' !important;
+    overflow-x: hidden;
+}
+
+.container .top img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+a {
+    color: rgb(0, 0, 0) !important;
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+.container {
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 12rem auto 8rem;
+}
+
+
+aside {
+    height: 100vh;
+}
+
+aside .top .logo h3{
+    font-size: 1.7rem;
+}
+
+aside .top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-top: 1rem;
+}
+
+aside .top .close {
+    font-weight: bold;
+    font-size: 2rem;
+    padding-right: 1rem;
+    display: none;
+}
+
+aside .sidebar {
+    background-color: rgb(226, 226, 226);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 9px;
+    height: 88vh;
+    position: relative;
+    top: 1.2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+aside .sidebar:hover {
+    box-shadow: none;
+}
+
+aside .sidebar a {
+    display:flex !important;
+    align-items: center !important;
+    color: grey;
+    height: 3.7rem;
+    margin-left: 2rem;
+    gap: 1rem;
+    position: relative;
+    transform: all 0.3s ease !important;
+}
+
+aside .sidebar a span {
+    font-size: 1.6rem;
+    transform: all 0.3s ease !important;
+}
+
+aside .sidebar a:last-child {
+    position: absolute !important;
+    bottom: 2rem;
+    width: 100% !important;
+}
+
+aside .sidebar a.active {
+    width: 100%;
+    background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+    margin-left: 0;
+    /* color: white !important; */
+}
+
+
+/* aside .sidebar a:hover {
+    color: ;
+} */
+aside .sidebar a > span {
+    transition: 0.3s ease !important;
+}
+aside .sidebar a:hover span {
+    margin-left: 0.6rem;
+}
+
+
+/* main content */
+
+
+main {
+    margin-top: 2rem !important;
+}
+
+
+main .stats > div {
+    background-color: rgb(207, 207, 207) !important;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: all 0.5s ease;
+}
+
+main .stats .card1:hover {
+    box-shadow: none; 
+}
+
+main .stats .card1 {
+    width: 10rem;
+    height: 6rem;
+    background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+}
+
+main .wikisinfos {
+    margin-top: 1.4rem;
+    background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+    width: 100%;
+}
