@@ -40,7 +40,7 @@ h3 {
     width: 96%;
     margin: 0 auto;
     gap: 1.8rem;
-    grid-template-columns: 12rem auto 8rem;
+    grid-template-columns: 12rem auto 3rem;
 }
 
 
@@ -67,7 +67,7 @@ aside .top .close {
 }
 
 aside .sidebar {
-    background-color: rgb(226, 226, 226);
+    background: radial-gradient(343px at 46.3% 47.5%, rgb(242, 242, 242) 0%, rgb(241, 241, 241) 72.9%);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 9px;
     height: 88vh;
@@ -151,6 +151,40 @@ main .stats .card1 {
 
 main .wikisinfos {
     margin-top: 1.4rem;
-    background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
     width: 100%;
+    height: auto;
 }
+
+main .wikicontainer {
+    background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+    border-radius: 10px;
+}
+
+
+main .wikicontainer .table{
+    --bs-table-bg : transparent;
+}
+
+
+
+
+.rightcorner .profile {
+    gap: 2rem !important;
+    text-align: right !important;
+}
+
+.rightcorner .profile-photo img {
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+
+.right {
+    background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+    border-radius: 20px;
+}
+
+.right .table {
+    --bs-table-bg : transparent;
+}
+
