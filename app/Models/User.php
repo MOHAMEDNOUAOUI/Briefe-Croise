@@ -54,4 +54,12 @@ class User  {
     }
 
 
+    public function get_user_by_email() {
+        $get=$this->db->prepare('SELECT * FROM utilisateur WHERE userEmail = :email');
+        $get->bindValue(':email' , $this->__get('userEmail') , PDO::PARAM_STR);
+        $get->execute();
+        $result=$get->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
 }

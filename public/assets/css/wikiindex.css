@@ -1,0 +1,182 @@
+body {
+    position: absolute;
+}
+
+
+
+
+
+.wrapper {
+    /* background-color: rgba(0,0,0,0.2); 
+    border: 12px 
+    #c8ccd16b;
+    padding: 13px;
+    box-sizing: border-box;
+    width: 237px;
+    height: 55px;
+    -webkit-tap-highlight-color:rgba(0,0,0,0.2); */
+
+    height: 55px;
+
+    background-color: #c8ccd16b;
+
+    display: inline-block;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    height: 3.375em;
+
+    border-top: 1px solid #c8ccd1;
+    margin-top: -1px;
+
+}
+/* language - star...ect*/
+
+#star{
+    position: absolute;
+    right: 70px;
+    top: 143px;
+}
+
+#edit-log{
+    position: absolute;
+    right: 43px;
+    top: 143px;
+}
+
+.note {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.logos {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #a5a5a5;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.logos button {
+    border: none;
+    background-color: transparent;
+}
+
+.main {
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+
+}
+
+#input {
+
+    padding: 6px;
+    font-size: 16px;
+    position: absolute;
+    text-align: left;
+    right: 300px;
+
+
+
+
+
+}
+
+
+
+
+#search-icon {
+
+    width: 20px;
+    float: right;
+    padding: 12px;
+    background-color: transparent;
+    color: transparent;
+    display: inline-block;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#wiki-img {
+    height: 119px;
+    height: 18px;
+    font-size: 100%;
+    background-color: transparent;
+    color: transparent;
+    right: 540px;
+    padding: 12px;
+
+
+
+
+
+}
+
+
+
+#menu-icon {
+
+
+    width: 20px;
+    height: 36px;
+    background-color: transparent;
+    padding: 2px;
+
+
+}
+
+
+
+#logo {
+    width: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+.table {
+    width: 100%;
+    background-color: #dddddd;
+
+    float: right;
+
+}
+
+td,
+th {
+    border: 1px solid;
+    text-align: left;
+    padding: 8px;
+    background-color: #dddddd;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+} 

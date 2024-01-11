@@ -1,0 +1,37 @@
+form .wrapper-box {
+    padding: 0px !important;
+    background-color: aliceblue;
+    position: absolute !important;
+    width: 100% !important;
+    max-height: 280px !important;
+    overflow-y: auto !important;
+    opacity: 0;
+    pointer-events: none;
+}
+
+form .wrapper-box.active {
+    padding: 10px 8px !important;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+form .wrapper-box.active li {
+    display: block !important;
+}
+
+form .wrapper-box li {
+    list-style: none;
+    padding: 8px 12px !important;
+    width: 100% !important;
+    cursor: default;
+    border-radius: 3px;
+    display: none !important;
+}
+
+form .wrapper-box li:hover {
+    background-color: #efefef !important;
+}
+
+form {
+    position:  relative !important;
+}

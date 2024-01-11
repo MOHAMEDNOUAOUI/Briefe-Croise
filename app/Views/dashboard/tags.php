@@ -56,7 +56,7 @@
 
 
 
-                <a href="#">
+                <a href="../dashboard/logout">
                     <span class="material-symbols-outlined">
                         logout
                     </span>

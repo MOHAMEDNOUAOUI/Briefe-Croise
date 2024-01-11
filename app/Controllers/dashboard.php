@@ -1,7 +1,29 @@
 <?php
 
-
 class dashboard extends Controller {
+
+    public function logout() {
+
+        session_start();
+        if(isset($_SESSION['userId'])){
+
+
+        
+        session_unset();
+        session_destroy();
+
+       
+
+
+        header('location: ../usercontroller/indexlogin');
+
+        }
+
+        echo $_SESSION['userId'];
+      
+    }
+
+
     public function index () {
         $CATEGORY = $this->model('category');
         $ALLCATEGORYS = $CATEGORY->get_all_categorys();
@@ -10,6 +32,9 @@ class dashboard extends Controller {
         //model user
         $USER = $this->model('User');
         $USERSTATS = $USER->userStats();
+
+        $USER->__set('userId', $_SESSION['userId']);
+        $USER->get_user_by_id();
 
 
         // model wiki
@@ -48,32 +73,53 @@ class dashboard extends Controller {
         //model tags
         $TAGS = $this->model('tags');
         $TAGSSTATS = $TAGS->tagStats();
-        $this->view('dashboard/index' , $data = ['category' => $ALLCATEGORYS , 
+        if(isset($_SESSION['userId'])) {
+            $this->view('dashboard/index' , $data = ['category' => $ALLCATEGORYS , 
                 'categorystats' => $CATEGORYSTATS ,
             'USERSTATS' => $USERSTATS ,
             'TAGSSTATS' => $TAGSSTATS,
             'WIKISTATS' => $WIKISTATS,
-            'ALLWIKIS' => $WIKIs
+            'ALLWIKIS' => $WIKIs,
+            'USERNAME' => $USER->__get('userName')
         ]);
+        }
+        else {
+            header('location: usercontroller/indexlogin');
+        }
     }
 
 
     public function user () {
         $USER = $this->model('User');
         $ALLUSERS = $USER->get_all_users();
-        $this->view('dashboard/user' ,$data = ['ALLUSERS' => $ALLUSERS]);
+        if(isset($_SESSION['userId'])){
+            $this->view('dashboard/user' ,$data = ['ALLUSERS' => $ALLUSERS]);
+        }else {
+            header('location: usercontroller/indexlogin');
+        }
+        
     }
 
     public function category() {
         $CATEGORY = $this->model('category');
         $ALLCATEGORYS = $CATEGORY->get_all_categorys ();
-        $this->view('dashboard/category',$data = ['CATEGORIES' => $ALLCATEGORYS]);
+        if(isset($_SESSION['userId'])){
+            $this->view('dashboard/category',$data = ['CATEGORIES' => $ALLCATEGORYS]);
+        }else {
+            header('location: usercontroller/indexlogin');
+        }
+        
     }
 
     public function tags () {
         $TAGS = $this->model('tags');
         $ALLTAGS = $TAGS->get_all_tags();
-        $this->view('dashboard/tags',$data = ['TAGS' =>$ALLTAGS]);
+       
+        if(isset($_SESSION['userId'])){
+ $this->view('dashboard/tags',$data = ['TAGS' =>$ALLTAGS]);
+        }else {
+            header('location: usercontroller/indexlogin');
+        }
     }
 
     public function change_status() {

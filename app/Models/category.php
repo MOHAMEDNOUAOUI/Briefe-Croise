@@ -70,5 +70,15 @@ class category {
         $insert->bindValue(':CT',$this->__get('categoryName') , PDO::PARAM_STR);
         $insert->execute();
     }
+
+
+    public function search() {
+        $like = $this->__get('categoryName').'%';
+        $search = $this->db->prepare('SELECT * FROM category WHERE categoryName LIKE :like');
+        $search->bindValue(':like' , $like , PDO::PARAM_STR);
+        $search->execute();
+        $result = $search->fetchALl(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
 

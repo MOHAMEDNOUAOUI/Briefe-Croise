@@ -6,31 +6,37 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../../public/assets/css/register.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   </head>
   <body>
-    <section class="main position-relative d-flex justify-content-center align-items-center">
-    <div class="overlay position-absolute w-100 h-100"></div>
+    <div class="main d-flex justify-content-center">
+    <div class="main-block">
+      <h1>Registration</h1>
+      <div class="form">
 
-    <div class="content align-items-center d-flex flex-column">
-      <div class="name d-flex flex-column">
-      <label for="">name</label>
-      <input type="text">
-      </div>
-      <div class="name d-flex flex-column">
-      <label for="">email</label>
-      <input type="text">
-      </div>
-      <div class="name d-flex flex-column">
-      <label for="">password</label>
-      <input type="text">
-      </div>
-      <div class="name d-flex flex-column">
-      <label for="">verify password</label>
-      <input type="text">
-      </div>
-      <button>REGISTER</button>
+        <label id="icon" for="email"><i class="fas fa-envelope"></i></label>
+        <input type="text" name="email" id="email" placeholder="Email" required/>
+
+        <label id="icon" for="username"><i class="fas fa-user"></i></label>
+        <input type="text" name="username" id="username" placeholder="Name" required/>
+
+        <label id="icon" for="password"><i class="fas fa-unlock-alt"></i></label>
+        <input type="password" name="password" id="password" placeholder="Password" required/>
+
+        <label id="icon" for="verifypassword"><i class="fas fa-unlock-alt"></i></label>
+        <input type="password" name="verifypassword" id="verifypassword" placeholder="Password" required/>
+
+        <div class="btn-block">
+          <p>If you have an account alread you can <a href="indexlogin">login from here</a>.</p>
+          <button name="register" id="submit" href="/">Submit</button>
+        </div>
+        
+</div>
     </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../public/assets/js/register.js"></script>
   </body>
 </html>

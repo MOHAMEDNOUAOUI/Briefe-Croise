@@ -47,7 +47,7 @@
                     <h3>Categories</h3>
                 </a>
 
-                <a href="../dashboard/tags">
+                <a href="dashboard/tags">
                     <span class="material-symbols-outlined">
                         style
                     </span>
@@ -56,7 +56,7 @@
 
                 
 
-                <a href="#">
+                <a href="dashboard/logout">
                     <span class="material-symbols-outlined">
                         logout
                     </span>
@@ -168,7 +168,7 @@
         <section class="rightcorner m-0 p-0">
             <div class="profile d-flex">
                 <div class="info">
-                    <p class="m-0 p-0">Hey, <b>Mohamed</b></p>
+                    <p class="m-0 p-0">Hey, <b><?php echo $data['USERNAME']?></b></p>
                     <small>Admin</small>
                 </div>
                 <div class="profile-photo">
