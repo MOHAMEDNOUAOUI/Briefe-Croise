@@ -162,9 +162,13 @@ modifybutton.forEach((btn)=>{
                     if(this.status==200){
                         Swal.fire(`Category name: ${category}`);
     
-                        setTimeout(() => {
-                            location.reload();
-                        }, 2000);
+                        // setTimeout(() => {
+                        //     location.reload();
+                        // }, 2000);
+
+
+                        let categoryNameinput = btn.closest('td').contains('.categoryName');
+                        categoryNameinput.innerText = "HELLO";
                     }
                   }
     

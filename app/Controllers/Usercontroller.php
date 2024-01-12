@@ -21,7 +21,7 @@ class Usercontroller extends Controller {
 
             // $USERclass = $this->model('User');
             try {
-                $user = $this->model('Auteur');
+                $user = $this->model('User');
             $user->__set('userEmail' , $email);
             $user->__set('userName',$username);
             $user->__set('userPwd' , $hashedpassword);
@@ -60,7 +60,7 @@ class Usercontroller extends Controller {
                             $response = [
                                 'status' => 'success',
                                 'message' => 'Login successful',
-                                'page' => '../home'
+                                'page' => '../hox²me'
                             ];
                         }
 

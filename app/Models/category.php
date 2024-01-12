@@ -50,6 +50,7 @@ class category {
         $this->__set('categoryName' , $result['categoryName']);
     }
 
+
     public function delete_category() {
         $categoryId = $this->__get('categoryId');
         $delete = $this->db->prepare('DELETE FROM category WHERE categoryId = :id');
@@ -72,13 +73,21 @@ class category {
     }
 
 
-    public function search() {
-        $like = $this->__get('categoryName').'%';
-        $search = $this->db->prepare('SELECT * FROM category WHERE categoryName LIKE :like');
-        $search->bindValue(':like' , $like , PDO::PARAM_STR);
-        $search->execute();
-        $result = $search->fetchALl(PDO::FETCH_ASSOC);
-        return $result;
+
+
+    public function latest_category() {
+        $latest = $this->db->query('SELECT * FROM category ORDER BY categoryId DESC LIMIT 10');
+        $result = $latest->fetchAll(PDO::FETCH_ASSOC);
+        $categorys = [];
+
+        foreach($result as $row) {
+            $category = new category();
+            $category->__set('categoryId' , $row['categoryId']);
+            $category->__set('categoryName' , $row['categoryName']);
+            $categorys [] = $category;
+        }
+
+        return $categorys;
     }
 }
 

@@ -67,4 +67,21 @@ public function delete_tag() {
         $delete->execute();
 }
 
+
+public function insert_tagpevot($id) {
+    $insert = $this->db->prepare('INSERT INTO wikitag VALUES (:wiki,:tag)');
+    $insert->bindValue(':wiki' , $id , PDO::PARAM_INT);
+    $insert->bindValue(':tag' , $this->tagId , PDO::PARAM_INT);
+    $insert->execute();
+}
+
+
+public function get_tags_by_wiki_id($id) {
+    $get = $this->db->prepare('SELECT * FROM tag JOIN wikitag ON wikitag.wikiId = :id GROUP BY wikitag.tagId');
+    $get->bindValue(':id' , $id , PDO::PARAM_INT);
+    $get->execute();
+    $result = $get->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
 }

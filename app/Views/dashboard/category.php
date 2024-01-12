@@ -98,7 +98,7 @@ add_box
     ?>
      <tr>
       <th scope="row"><?php echo $category->__get('categoryId')?></th>
-      <td><?php echo $category->__get('categoryName')?></td>
+      <td class="categoryName"><?php echo $category->__get('categoryName')?></td>
       <td>
         <button class="btn btn-dark modify category" value="<?php echo $category->__get('categoryId')?>">modify</button>
         <button class="btn btn-light delete category" value="<?php echo $category->__get('categoryId')?>">delete</button>

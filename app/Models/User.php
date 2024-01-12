@@ -22,6 +22,15 @@ class User  {
         $this->$param = $value;
     }
 
+    public function register() {
+        $register = $this->db->prepare('INSERT INTO utilisateur (userName,userEmail,userPassword) VALUES (:username,:email,:pwd)');
+        $register->bindValue(':username' , $this->__get('userName') , PDO::PARAM_STR);
+        $register->bindValue(':email' , $this->__get('userEmail'), PDO::PARAM_STR);
+        $register->bindValue(':pwd' , $this->__get('userPwd'), PDO::PARAM_STR);
+        $register->execute();
+    }
+
+    
     public function userStats () {
         $get = $this->db->query('SELECT COUNT(userId) FROM utilisateur WHERE userRole = "auteur"');
         $result = $get->fetch(PDO::FETCH_COLUMN);
