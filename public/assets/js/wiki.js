@@ -165,3 +165,46 @@ function headerlocation(element) {
 
     window.location.href = `home/wikiindex/${element}`;
 }
+
+
+
+
+function deletewiki(id) {
+
+    console.log(id);
+
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+
+              let xml = new XMLHttpRequest();
+
+              xml.onload = function () {
+                if(this.status==200 && this.readyState== 4){
+                    console.log(this.responseText);
+                }  
+            }
+
+            xml.open('POST' , '../../home/delete');
+            xml.setRequestHeader('Content-type' , 'application/x-www-form-urlencoded');
+            xml.send('delete='+id);
+
+        }
+      });
+
+
+
+
+}

@@ -54,7 +54,7 @@ class home extends Controller {
             $formattedTags[] = [
                 'tagId' => $tag['tagId'],
                 'tagName' => $tag['tagName']
-            ];
+            ];            
         }
 
 
@@ -160,6 +160,22 @@ class home extends Controller {
 
             header('location: ../home/index');
         }
+    }
+
+
+
+
+    public function delete() {
+            if(isset($_POST['delete'])){
+                $idwiki = $_POST['delete'];
+
+                $wikiclass = $this->model('wikis');
+                $wikiclass->__set('wikiId' , $idwiki);
+               
+                // DELETE TAG ASSOCIATED TO IT FROM DATABASE FIRST
+                    /// DELETING A WIKI FROM WIKI TABLE
+        $wikiclass->delete_wiki_tags();
+            }
     }
     
 }   

@@ -77,7 +77,7 @@ public function insert_tagpevot($id) {
 
 
 public function get_tags_by_wiki_id($id) {
-    $get = $this->db->prepare('SELECT * FROM tag JOIN wikitag ON wikitag.wikiId = :id GROUP BY wikitag.tagId');
+    $get = $this->db->prepare('SELECT * FROM `wikitag` join tag ON tag.tagId = wikitag.tagId WHERE wikitag.wikiId = :id');
     $get->bindValue(':id' , $id , PDO::PARAM_INT);
     $get->execute();
     $result = $get->fetchAll(PDO::FETCH_ASSOC);

@@ -81,6 +81,20 @@ class wikis {
             $delete->execute();
         }
 
+        public function delete_wiki_by_id() {
+            $delete = $this->db->prepare('DELETE FROM wiki WHERE wikiId = :id');
+            $delete->bindValue(':id' , $this->wikiId , PDO::PARAM_INT);
+            $delete->execute();
+        }
+
+        public function delete_wiki_tags() {
+            $delete = $this->db->prepare('DELETE FROM wikitag WHERE wikiId = :id');
+            $delete->bindValue(':id' , $this->wikiId , PDO::PARAM_INT);
+            if($delete->execute()){
+                $this->delete_wiki_by_id();
+            }
+        }
+
 
         public function search() {
             $like = $this->__get('wikiTitle').'%';

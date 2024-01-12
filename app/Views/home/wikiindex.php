@@ -16,39 +16,11 @@
 
 
 
-    <div class="main row">
+    <div class="main row w-100">
 
 
 <div class="left col-md-3">
     
-<h1 style="word-wrap: break-word">
-
-<?php
-
-echo $data['wikiTitle'];
-?>
-</h1>
-
-
-
-
-<?php
-if($data['userId'] == $_SESSION['userId']){
-    ?>
-    <div class="logos">
-    <button>modify</button>
-    <button>delete</button>
-</div>
-    <?php
-}
-
-?>
-
-
-
-
-
-
 
     
     <table class="infobox" style="width:100%
@@ -65,9 +37,9 @@ if($data['userId'] == $_SESSION['userId']){
                 <td style="line-height:1.35em;">
                     <div class="plainlist">
                         <ul>
-                            <?php foreach ($data['tags'] as $tag){
+                            <?php foreach ($data['tags'] as $tag => $value){
                                 ?>
-                                <li><code><?php echo $tag['tagName']?></code></li>
+                                <li><code><?php echo $value['tagName']?></code></li>
                                 <?php
                             }?>
                         </ul>
@@ -99,16 +71,6 @@ if($data['userId'] == $_SESSION['userId']){
 
 
 
-            <tr>
-                <th scope="row" style="line-height:1.2em; padding-right:0.65em;"><a
-                        href="/wiki/Software_release_life_cycle" title="Software release life cycle">Latest
-                        release</a></th>
-                <td style="line-height:1.35em;">
-                    <div style="display:inline-block; padding:0.1em 0;line-height:1.2em;"><a rel="nofollow"
-                            class="external text" href="https://html.spec.whatwg.org/">Living
-                            Standard</a><br>(2021) </div>
-                </td>
-            </tr>
             
             
             
@@ -122,14 +84,37 @@ if($data['userId'] == $_SESSION['userId']){
 
 
              <div class="right col-md-9">
-            
+             <h1 class="mt-0" style="word-wrap: break-word">
 
-             <h2>HTML Table</h2>
-        <p>is the <a href="link">standard markup language </a>
-            standar for documents designed to be displayed in a <a href="link"> web browser.</a>
-            It can be assisted by technologies such as <a href="link"> Cascading Style Sheets</a> (CSS) and <a
-                href="link">
-                languages</a> such as <a href="link">JavaScript.</a></p>
+<?php
+
+echo $data['wikiTitle'];
+?>
+</h1>
+<hr>
+
+
+
+
+<?php
+if($data['userId'] == $_SESSION['userId']){
+    ?>
+    <div class="logos">
+    <button>modify</button>
+    <button onclick="deletewiki(<?php echo $data['wikiId']?>)">delete</button>
+</div>
+
+    <?php
+}
+
+?>
+        <p>
+
+<?php
+echo $data['wikiText']
+?>
+
+        </p>
 
    
                 
@@ -140,7 +125,8 @@ if($data['userId'] == $_SESSION['userId']){
 
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../../public/assets/js/wiki.js"></script>
     </body>
-
-
 </html>
