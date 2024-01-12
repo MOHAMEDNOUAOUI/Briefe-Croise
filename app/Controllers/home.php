@@ -26,7 +26,6 @@ class home extends Controller {
 
 
 
-
     public function wikiindex($wikiId) {
         $wikiclass = $this->model('wikis');
         $wikiclass->__set('wikiId' , $wikiId);
@@ -158,7 +157,10 @@ class home extends Controller {
             $_POST['text'] == '';
 
 
-            header('location: ../home/index');
+            
+        }
+        else {
+            header('location: ../home');
         }
     }
 

@@ -74,11 +74,12 @@ if(isset($_SESSION['userId'])){
 
             <div class="d-flex flex-column" id="uploadForm">
 
-              <div class="drop-zone bg-dark d-flex justify-content-center align-items-center mb-3">
-                <div style="height:10rem" class="drop-zone__prompt text-white d-flex flex-column align-items-center justify-content-center">
+              <div class="drop-zone w-50 bg-dark d-flex justify-content-center align-items-center mb-3">
+                <div style="width:10rem;height:15rem" class="drop-zone__prompt text-white d-flex flex-column align-items-center justify-content-center">
                   <ion-icon style="font-size:5rem" name="cloud-upload-outline"></ion-icon>
                   <span class="text-white">Drop your album cover</span>
                 </div>
+
               </div>
 
               <input type="file" name="myFile" class="drop-zone__input mb-3" id="myFileInput" multiple>

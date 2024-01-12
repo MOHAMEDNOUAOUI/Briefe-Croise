@@ -112,7 +112,7 @@ class wikis {
 
 
         public function latest_wikis () {
-            $latest = $this->db->query('SELECT * FROM wiki ORDER BY release_date DESC');
+            $latest = $this->db->query('SELECT * FROM wiki ORDER BY release_date DESC LIMIT 8');
             $result = $latest->fetchAll(PDO::FETCH_ASSOC);
 
             $wikis = [];
